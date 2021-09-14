@@ -20,5 +20,5 @@ exports.default = function () {
         pretty: '  ',
       })
     )
-    .pipe(dest(path.resolve(__dirname, 'dist')));
+    .pipe(dest(path.resolve(__dirname, 'public')));
 };

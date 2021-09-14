@@ -1,12 +1,14 @@
-mixin imgWithSize(src)
-  - const { width, height } = imageSize(src);
-  img(src=src alt="" width=width height=height)
+mixin img(src, alt = '')
+  - const { width, height } = imageSize(src); // gulp-dataで定義したimageSize関数
+  img(src=src, alt=alt, width=width, height=height)
 
 doctype html
-html
+html(lang='ja')
   head
     meta(charset='utf-8')
     title img width, height自動付与
   body
-    +imgWithSize('150x150.png')
-    +imgWithSize('300x200.png')
+    //- 相対パス
+    +img('./images/150x150.png')
+    //- /から始まるルート相対パス
+    +img('/images/300x200.png')
